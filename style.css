@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+}
+nav{
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+}
+nav .logo{
+    font-size: xx-large;
+    font-weight: 400;
+}
+nav ul{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style-type: none;
+}
+nav ul li a{
+text-decoration: none;
+background-color: black;
+color: white;
+padding: 0.75em 1.5em;
+border-radius: 2em;
+}
+main{
+    max-width: 950px;
+    margin: 0 auto;
+    /* text-align: center; */
+}
+main section{
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 400;
+    margin-top: 5em;
+}
+main p{
+    text-align: justify;
+    margin-top: 2em;
+}
+
+footer{
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #ddd;
+    display: block;
+    padding: 1em;
+}
+.error-container{
+    margin: 0 auto;
+    max-width: 300px;
+    margin-top: 40vh;
+    padding: 2em;
+    border-radius: 2em;
+    background-color:  rgb(87, 87, 146);
+    color: white;
+}
+main form{
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 2em;
+}
+form label{
+    font-size: x-large;
+    font-weight: 200;
+}
+form input{
+    padding: 1em;
+}
+form textarea{
+    height: 10vh;
+    resize: none;
+    padding: 1em;
+}
+form button{
+    background-color: transparent;
+    border: none;
+    background-color: blueviolet;
+    width: fit-content;
+    margin: 0 auto;
+    color: white;
+    padding: 1em 2em;
+    border-radius: 1.5em;
+    font-size: 1em;
+    cursor: pointer;
+}
