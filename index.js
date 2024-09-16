@@ -1,6 +1,7 @@
-const http=require("http")
-const fs=require("fs")
-const {parse}=require("querystring")
+const http=require("http");
+const fs=require("fs");
+const {parse}=require("querystring");
+const {MongoClient}=require("mongodb");
 
 let server=http.createServer((req,res)=>{
     if(req.method==="POST"){
@@ -9,9 +10,13 @@ let server=http.createServer((req,res)=>{
             req.on("data",(chunks)=>{
                 body+=chunks;
             })
-            req.on("end",()=>{
-                console.log(parse(body))
-                res.end("message Sent")
+            req.on("end",async ()=>{
+                console.log()
+                let client=await MongoClient.connect("mongodb://127.0.0.1:27017");
+                let db=await client.db("Blog-db")
+                let collection=await db.createCollection("messages")
+                await collection.insertOne(parse(body));
+                res.end("Message sent");
             })
         }else{
             res.end("not a form data")
